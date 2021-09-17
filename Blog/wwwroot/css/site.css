@@ -5,6 +5,7 @@ for details on configuring this project to bundle and minify static web assets. 
 
 * {
     font-family: 'Open Sans', sans-serif;
+    
 }
 
 input[type=text], input[type=password], input[type=email] {
@@ -80,8 +81,9 @@ body, main {
   /* Margin bottom by footer height */
   display:flex;
   flex-direction:column;
-  margin-bottom: 60px;
   height:100%;
+  overflow-y:auto;
+  overflow-x:hidden;
 }
 .footer {
   position: absolute;
@@ -96,6 +98,7 @@ body, main {
     line-height:60px;
     bottom:0;
     background-color:white;
+    position:relative;
 }
 
 /* My Css Classes
@@ -132,6 +135,48 @@ body, main {
     color:white;
     border:none;
 }
+
+.A_Tag_Ideagen_Button {
+    display: flex;
+    flex-direction: row;
+    padding-top:6px;
+    padding-bottom:6px;
+    padding-left:15px;
+    padding-right:15px;
+    text-align:center;
+    background: #1B838B;
+    mix-blend-mode: normal;
+    border-radius: 8px;
+    color: white;
+    border: none;
+    text-decoration: none;
+}
+
+.A_Tag_Ideagen_Button:hover{
+    text-decoration:none;
+    color:white;
+}
+
+.A_Tag_Button_Secondary {
+    display: flex;
+    flex-direction: row;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+    background: #6c757d;
+    mix-blend-mode: normal;
+    border-radius: 8px;
+    color: white;
+    border: none;
+    text-decoration: none;
+}
+
+    .A_Tag_Button_Secondary:hover {
+        text-decoration: none;
+        color: white;
+    }
 
 input[type="file"] {
     font-family: 'Open Sans', sans-serif;
@@ -189,6 +234,15 @@ input[type="file"] {
 
 .NewPostPage {
     background: linear-gradient(rgb(0,0,0,0.6), rgb(0,0,0,0.6)), url('/content/blog/room.jpg');
+    width: fit-content;
+    height: fit-content;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.ViewPostPage {
+    background: linear-gradient(rgb(0,0,0,0.6), rgb(0,0,0,0.6)), url('/content/blog/glasses.jpg');
     width: fit-content;
     height: fit-content;
     background-size: cover;
