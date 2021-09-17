@@ -1,0 +1,42 @@
+﻿@model PostViewModel
+
+@{ 
+    ViewData["Title"] = "Edit Post";
+}
+
+<div class="PageDiv NewPostPage">
+    <div class="container">
+
+        <div class="card" style=" margin-top:auto;">
+            <form asp-controller="Panel" asp-action="Edit" method="post" enctype="multipart/form-data">
+                <input asp-for="Id" type="hidden" />
+                <div class="card-header">
+                    @if (Model.Id == 0)
+                    {
+                        <h1 class="display-4">New Post</h1>
+                    }
+                    else
+                    {
+                        <h1>@Model.Title</h1>
+                    }
+
+                </div>
+                <div class="card-body">
+                    <label asp-for="Title" class="control-label bold"></label>
+                    <input asp-for="Title" class="form-control" />
+                    <label asp-for="Body" class="control-label bold"></label>
+                    @Html.TextAreaFor(m => m.Body, new { @class = "form-control", @rows = 5 })
+                    <label asp-for="Image" class="control-label bold mt-3"></label><br />
+                    <input asp-for="Image" class="mt-0" />
+                    @if (@Model.DisplayImage != null)
+                    {
+                        <p class="mt-0">Currently: @Model.DisplayImage</p>
+                    }
+                </div>
+                <div class="card-footer">
+                    <input type="submit" value="Submit" class="btn btn-success" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

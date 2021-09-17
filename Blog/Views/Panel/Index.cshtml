@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Post>
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div >
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="text-center">
+                <h2 class="display-4 mt-4">Post Management</h2>
+            </div>
+            <div>
+                @foreach (var post in Model)
+                {
+
+                    <div class="card" style="margin: 3rem; height:245px;">
+                        <div class="card-header">
+                            <h2>@post.Title</h2>
+                            <p class="small mb-0">@post.Created</p>
+
+                        </div>
+                        <div class="card-body">
+                            <p>@post.TruncatedBody</p>
+                        </div>
+                        <div class="card-footer">
+                            <a asp-controller="Panel" asp-action="Edit" asp-route-id="@post.Id" class="btn btn-warning">Edit</a>
+                            <a asp-controller="Panel" asp-action="Remove" asp-route-id="@post.Id" class="btn btn-danger">Delete</a>
+                        </div>
+                    </div>
+
+                }
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="text-center">
+                <h2 class="display-4 mt-4">Insights</h2>
+            </div>
+            <div style="margin: 3rem; padding:1rem;" class="card">
+                <canvas id="myChart"></canvas>
+                <script>Linechart();</script>
+            </div>
+
+            <div style="margin: 3rem; padding:1rem;" class="card">
+                <canvas id="polararea"></canvas>
+                <script>PolarArea();</script>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+

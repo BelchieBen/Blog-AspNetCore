@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Post>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="mt-0" >
+    <div class="Banner" style="width:100%; height:400px">
+        <h1 class="display-4 Posts">Blog Posts</h1>
+    </div>
+    
+    @*<img src="~/content/blog/HomepageBanner.jpg" class="imgBanner" />*@
+</div>
+
+<div class="container">
+    <div class="row mt-5">
+        @foreach (var post in Model)
+        {
+
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 mb-3">
+                <div class="card" style="height:245px">
+                    <div class="card-header">
+                        <h2>@post.Title</h2>
+                        <p class="small mb-0">@post.Created</p>
+                    </div>
+                    <div class="card-body">
+                        <p>@post.TruncatedBody</p>
+                    </div>
+                    <div class="card-footer">
+                        <a asp-controller="Home" asp-action="Post" asp-route-id="@post.Id">View</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+</div>

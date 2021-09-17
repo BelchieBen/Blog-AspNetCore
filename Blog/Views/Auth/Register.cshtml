@@ -1,0 +1,37 @@
+﻿@model RegisterViewModel
+@{
+}
+
+<div class="PageDiv LoginPage">
+    <div class="container">
+        <form asp-controller="Auth" asp-action="Register" method="post" style="width:600px; margin:auto; background-color:white;">
+            <div class="container-sm">
+                <div class="card-header fill">
+                    <h3>Create your account</h3>
+                </div>
+                <div class="fill card-body">
+                    <label>Email</label>
+                    <input asp-for="Email" />
+                    <br />
+                    <label>Username</label>
+                    <input asp-for="Username" />
+                    <br />
+                    <label>Password</label>
+                    <input asp-for="Password" />
+                    <label>Confirm Password</label>
+                    <input asp-for="ConfirmPassword" />
+                    <label>Role</label>
+                    <select id="RoleList" asp-for="Role" class="form-control" asp-items="@ViewBag.Roles">
+                        <option>Select a Role</option>
+                    </select>
+                </div>
+
+                <div class="card-footer fill">
+                    <input type="submit" value="Register" class="Ideagen_btn" />
+                    <br />
+                    <a asp-controller="Auth" asp-action="Register">Already have an account?</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

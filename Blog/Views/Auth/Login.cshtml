@@ -1,0 +1,27 @@
+﻿@model LoginViewModel
+@{
+}
+
+<div class="PageDiv LoginPage">
+    <div class="container">
+        <form asp-controller="Auth" asp-action="Login" method="post" style="width:600px; margin:auto; background-color:white;">
+            <div class="container-sm">
+                <div class="card-header fill">
+                    <h3>Login to your account</h3>
+                </div>
+                <div class="fill card-body">
+                    <label>Username</label>
+                    <input asp-for="Username" />
+                    <br />
+                    <label>Password</label>
+                    <input asp-for="Password" />
+                </div>
+
+                <div class="card-footer fill">
+                    <input type="submit" value="Sign In" class="Ideagen_btn" />
+                    <a asp-controller="Auth" asp-action="Register" style="margin-top:1rem;">Dont have an account?</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
